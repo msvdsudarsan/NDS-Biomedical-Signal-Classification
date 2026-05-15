@@ -1,4 +1,5 @@
 # Nonlinear Dynamical System-Based Feature Extraction for Biomedical Signal Classification Using Deep Learning
+DOI: https://doi.org/10.5281/zenodo.20196755
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020b%2B-blue.svg)](https://www.mathworks.com)
