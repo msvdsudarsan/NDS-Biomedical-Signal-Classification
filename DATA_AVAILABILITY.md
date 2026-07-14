@@ -1,93 +1,47 @@
 # Data Availability
 
-All datasets used in this study are publicly available via PhysioNet.
-No proprietary or restricted data were used.
+All datasets used in this study are publicly available via PhysioNet. No
+proprietary or restricted data were used, and no synthetic data are used for the
+reported results.
 
 ---
 
 ## 1. CHB-MIT Scalp EEG Database
 
-- **URL**: https://physionet.org/content/chbmit/1.0.0/
-- **DOI**: https://doi.org/10.13026/C2K01R
-- **Description**: Long-term scalp EEG recordings from 23 paediatric subjects
-  with intractable seizures. Contains 686 seizure events. Sampling rate: 256 Hz,
-  23 channels, EDF format.
-- **Access**: Free registration on PhysioNet required.
-
-### Download (command line)
-```bash
-wget -r -N -c -np \
-  https://physionet.org/files/chbmit/1.0.0/
-```
-
-### MATLAB loading example
-```matlab
-% Using MATLAB edfread() (R2020b+)
-[hdr, record] = edfread('chb01_01.edf');
-eeg_channel = record(7,:);   % F7-T7 channel
-```
-
----
+- URL: https://physionet.org/content/chbmit/1.0.0/
+- DOI: https://doi.org/10.13026/C2K01R
+- Scope used here: subjects chb01, chb02, chb03, chb05; channel FP1-F7; 256 Hz;
+  2-second windows; 400 ictal + 400 interictal windows (balanced).
+- Access: free registration on PhysioNet.
 
 ## 2. MIT-BIH Arrhythmia Database
 
-- **URL**: https://physionet.org/content/mitdb/1.0.0/
-- **DOI**: https://doi.org/10.13026/C2F305
-- **Description**: 48 half-hour two-lead ECG recordings from 47 subjects.
-  Beat annotations follow AAMI EC57 standard. Sampling rate: 360 Hz.
-- **Access**: Freely available, no registration required.
-
-### Download (command line)
-```bash
-wget -r -N -c -np \
-  https://physionet.org/files/mitdb/1.0.0/
-```
-
-### MATLAB loading example
-```matlab
-% Using WFDB Toolbox for MATLAB
-% https://physionet.org/content/wfdb-matlab/
-[signal, Fs, tm] = rdsamp('mitdb/100', [1], 1000);
-ecg = signal(:,1);
-```
-
----
-
-## 3. WFDB Toolbox (for MATLAB)
-
-- **URL**: https://physionet.org/content/wfdb-matlab/
-- Required to read `.hea`, `.dat`, `.atr` files from MIT-BIH.
-
-```matlab
-% Install WFDB Toolbox
-websave('wfdb_matlab.zip', ...
-  'https://physionet.org/files/wfdb-matlab/0.10.0/wfdb-app-toolbox.zip');
-unzip('wfdb_matlab.zip');
-addpath(genpath('wfdb-app-toolbox'));
-```
+- URL: https://physionet.org/content/mitdb/1.0.0/
+- DOI: https://doi.org/10.13026/C2F305
+- Scope used here: canonical AAMI inter-patient split. DS1 = {101,106,108,109,
+  112,114,115,116,118,119,122,124,201,203,205,207,208,209,215,220,223,230}
+  (train); DS2 = {100,103,105,111,113,117,121,123,200,202,210,212,213,214,219,
+  221,222,228,231,232,233,234} (test). Paced records (102,104,107,217) excluded.
+  Lead MLII; 360 Hz; five AAMI classes (N, S, V, F, Q).
+- Access: freely available, no registration required.
 
 ---
 
 ## Reproducibility Note
 
-The MATLAB script `matlab/NDS_BiomedicalSignal_Paper_v5.m` generates all
-figures using **synthetic signals** that replicate the key dynamical properties
-of the real datasets (ictal: quasi-periodic, inter-ictal: Lorenz chaotic).
-This allows full reproducibility without requiring access to the clinical data.
-
-All reported performance numbers (98.7%, 97.4%, AUC values) are derived from
-experiments on the original PhysioNet datasets as described in the paper.
+The MATLAB script `NDS_RealData_Pipeline.m` downloads the real recordings above
+from PhysioNet and computes every reported number directly from them, with no
+hardcoded results and no synthetic substitution. Class balancing on the ECG task
+is performed by random oversampling of the DS1 training partition only.
 
 ---
 
-## Citation for Datasets
+## Dataset Citations
 
 ```
-Shoeb, A. H. (2009). Application of Machine Learning to Epileptic Seizure
-Onset Detection and Treatment. PhD Thesis, MIT.
-CHB-MIT database. PhysioNet. https://doi.org/10.13026/C2K01R
+Shoeb, A. H. (2009). Application of Machine Learning to Epileptic Seizure Onset
+Detection and Treatment. PhD Thesis, MIT. CHB-MIT database, PhysioNet.
 
 Moody, G. B., & Mark, R. G. (2001). The impact of the MIT-BIH Arrhythmia
-Database. IEEE Engineering in Medicine and Biology Magazine, 20(3), 45-50.
-MIT-BIH database. PhysioNet. https://doi.org/10.13026/C2F305
+Database. IEEE Eng. Med. Biol. Mag., 20(3), 45-50. MIT-BIH database, PhysioNet.
 ```
