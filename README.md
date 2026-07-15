@@ -8,12 +8,15 @@
 
 ## Authors
 
-**Sri Venkata Durga Sudarsan Madhyannapu**¹ · **Sravanam Pradheep Kumar**²
+**Sri Venkata Durga Sudarsan Madhyannapu**¹ · **Kankipati Subbarao**¹ · **G. Arunagiri**² · **S. Parvathi**³ · **D. R. Krishna Thippisetti**⁴
 
-¹ Department of Mathematics, Dr. RVR NRI Institute of Technology (Deemed to be University),
-Pothavarappadu, Andhra Pradesh 521212, India · ORCID: 0009-0001-2126-6428
+¹ Department of Mathematics, School of Sciences, Humanities and Management, Dr. RVR NRI Institute of Technology (Deemed to be University), Pothavarappadu, Andhra Pradesh 521212, India · ORCID: Madhyannapu 0009-0001-2126-6428 (corresponding), Subbarao 0009-0000-3953-2950
 
-² School of Basic Sciences, SRM University AP, Mangalagiri, Guntur, Andhra Pradesh 522240, India · ORCID: 0009-0001-9426-4458
+² Department of Mathematics, Sri Indu Institute of Engineering and Technology, Sheriguda, Hyderabad, Telangana 501510, India · ORCID: Arunagiri 0009-0002-3657-8819
+
+³ Department of Mathematics and Statistics, SRM Institute of Science and Technology, Kattankulathur, Chennai, Tamilnadu 603203, India
+
+⁴ Department of Mathematics, Sri Vasavi Engineering College (Autonomous), Pedatadepalli, Tadepalligudem, Andhra Pradesh, India
 
 ---
 
@@ -89,7 +92,7 @@ See [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md) for full download instruction
 @article{madhyannapu2026nonlinear,
   title   = {Nonlinear Dynamical System-Based Feature Extraction for
              Biomedical Signal Classification Using Deep Learning},
-  author  = {Madhyannapu, Sri Venkata Durga Sudarsan and Kumar, Sravanam Pradheep},
+  author  = {Madhyannapu, Sri Venkata Durga Sudarsan and Subbarao, Kankipati and Arunagiri, G. and Parvathi, S. and Thippisetti, D. R. Krishna},
   journal = {Biomedical Signal Processing and Control},
   year    = {2026}
 }
