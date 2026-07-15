@@ -30,9 +30,12 @@ by singular system analysis (SSA), reconstructed in phase space via the Takens
 embedding theorem, and summarised by a compact ten-dimensional feature vector
 comprising the largest Lyapunov exponent, the correlation dimension, the
 embedding parameters, and six recurrence quantification analysis (RQA)
-statistics. A hybrid CNN-LSTM classifier is evaluated on real recordings from
-PhysioNet. **All numbers below are measured directly by the pipeline on real
-data (no hardcoding).**
+statistics. Two modality-appropriate supervised back-ends are evaluated on
+real PhysioNet recordings: a hybrid CNN-LSTM network classifies the
+SSA-denoised EEG waveform windows, while a radial-basis-function support
+vector machine (one-vs-all ECOC) classifies the ECG feature vector augmented
+with three RR-interval descriptors. **All numbers below are measured directly
+by the pipeline on real data (no hardcoding).**
 
 ---
 
@@ -72,8 +75,9 @@ NDS_RealData_Pipeline
 
 The script downloads the required CHB-MIT EDF files and MIT-BIH records directly
 from PhysioNet on first run, extracts the dynamical features, trains the
-CNN-LSTM classifier, prints the measured metrics, and saves all figures (PNG +
-PDF) to the output folder. No synthetic data are used.
+modality-appropriate classifiers (CNN-LSTM for EEG; RBF-SVM for ECG), prints
+the measured metrics, and saves all figures (PNG + PDF) to the output folder.
+No synthetic data are used.
 
 ---
 
